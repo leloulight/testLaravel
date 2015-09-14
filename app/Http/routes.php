@@ -1,5 +1,4 @@
 <?php
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -11,8 +10,25 @@
 |
 */
 
+class Page extends Illuminate\Database\Eloquent\Model{
+
+    public $timestamps = false;
+
+    protected $table = 'pages';
+
+    protected $fillable = ['id', 'name', 'number'];
+}
+
 Route::get('/', 'WelcomeController@index');
 
 Route::get('/page/{wildcard}', function($wildcard) {
+    $page = new Page;
+
+
+    $page->name = "rrrr";
+    $page->number = $wildcard;
+
+    $page->save();
+
     return view('page', ['wildcard' => $wildcard]);
 })-> where('wildcard','[0-9]+');
