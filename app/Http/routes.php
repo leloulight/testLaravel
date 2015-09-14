@@ -14,5 +14,5 @@
 Route::get('/', 'WelcomeController@index');
 
 Route::get('/page/{wildcard}', function($wildcard) {
-    echo $wildcard;
+    return view('page', ['wildcard' => $wildcard]);
 })-> where('wildcard','[0-9]+');
