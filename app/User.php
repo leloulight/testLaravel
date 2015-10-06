@@ -1,5 +1,5 @@
 <?php namespace App;
-
+/*ttt*/
 use Illuminate\Auth\Authenticatable;
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Auth\Passwords\CanResetPassword;
